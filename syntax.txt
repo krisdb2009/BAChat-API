@@ -1,0 +1,39 @@
+Recieving messages: POST AUTH=(SessionID)&channel=(ChannelID)&wait=(MessageIDThatIsToAppear): Will wait for the message ID to show... If ID already generated, will immediatly respond with all messages after the messageID.
+
+Sending messages: POST AUTH=(SessionID)&channel=(ChannelID)&send=(MessageToBeSent): Will send message to channel.
+
+Retrieving channel list: POST AUTH=(SessionID)&channels: Lists all channels a user has access to.
+
+
+ChannelID: A string that identifies the channel (Can only be numbers and lower case letters) channel 0 identifies the default channel.
+
+
+
+Commands (server side):
+
+
+Commands (client side):
+/clear : clears screen
+/channel <channelID> : Moves to a different channel.
+/logout : Logs user off
+
+Actions (Client Side): 
+0: kick : Tells client to move to main chat room.
+1: move : Tells client to move to the channel ID with reason. (ChannelID and reason are given in the message as a json string)
+2: 
+3
+4
+5
+
+All Returns JSON:
+
+{
+	messageID(Number): {
+		username: (String)
+		userlevel: (Number)
+		timestamp: (Number)
+		unique: (Boolean)
+		action: (Number)
+		message: (String)
+	}
+}
