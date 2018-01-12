@@ -3,9 +3,7 @@ use Ratchet\Server\IoServer;
 use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
 use BAChat\BAChat;
-
-require dirname(__DIR__) . '/vendor/autoload.php';
-
+require('vendor/autoload.php');
 require('BAChat/BAChat.php');
 
 $server = IoServer::factory(
@@ -14,7 +12,7 @@ $server = IoServer::factory(
 			new BAChat()
 		)
 	),
-	8080
+	58756
 );
 
 $server->run();
